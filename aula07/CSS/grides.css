@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box; /*incluindo burda e padding no tamanho total do elemento*/
+}
+
+/*Cria um pseudo-elemento após o .row para limpar as flutuações*/
+.row::after{
+    content: ""; /*Adicionar o conteudo vazio*/
+    clear: both; /*Lipma as flutuações a direita*/
+    display: block;
+}
+
+/*Selecionando todos os elementos que começam com col-*/
+[class*=col-]{
+    float: left;/*Flutua elementos a esquerda*/
+    padding: 15px; /*Adiciona padding de 15px*/
+}
+
+/*Definindo largura das colunas*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/*Criando display para moblie*/
+@media only screen and (max-width: 768px){
+    [class*=col-]{
+        width: 50%;
+    }
+}
