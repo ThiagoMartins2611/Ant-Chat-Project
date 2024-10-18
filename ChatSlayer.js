@@ -13,7 +13,12 @@ function ChangeText(text){
           
             if(isNaN(textArray[i])){
 
-                  
+                  if (textArray[i] === "i" || textArray[i] === "I") {
+                        if (textArray[i+1] === "g" && textArray[i+2] === "u" && textArray[i+3] === "a" && textArray[i+4] === "l") {
+                            // Substitui a palavra "igual" por "diferente"
+                            textArray.splice(i, 5, "d", "i", "f", "e", "r", "e", "n", "t", "e");
+                        }
+                  }
 
             }else if(textArray[i] != " "){
 
