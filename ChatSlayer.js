@@ -13,9 +13,15 @@ function ChangeText(text){
           
             if(isNaN(textArray[i])){
 
+                  
+
             }else if(textArray[i] != " "){
 
+                  if(!isNaN(textArray[i-1])){
                   textArray[i] = Math.trunc(Math.random()*10);
+                  }
+
+
             }
 
       }
@@ -23,7 +29,10 @@ function ChangeText(text){
       
       text = textArray.join("")
 
+      console.log(text)
       return text;
+
+      
 }
 
 let selectedText = document.getElementById('exemplo');
@@ -32,6 +41,7 @@ document.addEventListener('copy', function (event){
 
       event.preventDefault();
       event.clipboardData.setData('text/plain',  ChangeText(selectedText));
+    
 
 });
 
