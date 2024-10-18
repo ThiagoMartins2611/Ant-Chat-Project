@@ -1,12 +1,40 @@
+
+function ChangeText(text){
+
+      text = selectedText.textContent;
+
+      let textArray = text.split("");
+
+      textArrayLength = textArray.length;
+
+
+
+      for(let i = 0; i<=textArrayLength; i++){
+          
+            if(isNaN(textArray[i])){
+
+            }else if(textArray[i] != " "){
+
+                  textArray[i] = Math.trunc(Math.random()*10);
+            }
+
+      }
+
+      
+      text = textArray.join("")
+
+      return text;
+}
+
+let selectedText = document.getElementById('exemplo');
+
 document.addEventListener('copy', function (event){
 
       event.preventDefault();
-  
-      let selectedText = document.getElementById('exemplo');
-  
+      event.clipboardData.setData('text/plain',  ChangeText(selectedText));
 
-      let modifiedText = selectedText.textContent + " - Texto modificado após copiar!";
-  
-
-      event.clipboardData.setData('text/plain', modifiedText);
 });
+
+
+
+
